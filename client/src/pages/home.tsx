@@ -101,7 +101,7 @@ export default function Home() {
                 >
                   <div className="text-2xl font-bold">k11</div>
                   <div className="text-sm text-muted-foreground">
-                    Certified
+                    Certified Trainer
                   </div>
                 </motion.div>
                 <motion.div 
