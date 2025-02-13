@@ -7,12 +7,25 @@ async function throwIfResNotOk(res: Response) {
   }
 }
 
+// Helper to get the base URL depending on environment
+const getBaseUrl = () => {
+  if (process.env.NODE_ENV === 'development') {
+    return ''; // Empty string for same-origin requests in development
+  }
+  // Use the deployment URL in production
+  return process.env.NEXT_PUBLIC_VERCEL_URL ? 
+    `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` : '';
+};
+
 export async function apiRequest(
   method: string,
   url: string,
   data?: unknown | undefined,
 ): Promise<Response> {
-  const res = await fetch(url, {
+  const baseUrl = getBaseUrl();
+  const fullUrl = `${baseUrl}${url}`;
+
+  const res = await fetch(fullUrl, {
     method,
     headers: data ? { "Content-Type": "application/json" } : {},
     body: data ? JSON.stringify(data) : undefined,
@@ -29,7 +42,10 @@ export const getQueryFn: <T>(options: {
 }) => QueryFunction<T> =
   ({ on401: unauthorizedBehavior }) =>
   async ({ queryKey }) => {
-    const res = await fetch(queryKey[0] as string, {
+    const baseUrl = getBaseUrl();
+    const fullUrl = `${baseUrl}${queryKey[0]}`;
+
+    const res = await fetch(fullUrl, {
       credentials: "include",
     });
 
