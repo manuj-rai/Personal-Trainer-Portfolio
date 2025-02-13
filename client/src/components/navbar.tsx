@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { ThemeToggle } from "./theme-toggle";
 import { Button } from "./ui/button";
 import { Menu } from "lucide-react";
@@ -13,6 +13,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const isMobile = useIsMobile();
+  const [location] = useLocation();
 
   const links = [
     { href: "/", label: "Home" },
@@ -26,7 +27,12 @@ export default function Navbar() {
     <>
       {links.map((link) => (
         <Link key={link.href} href={link.href}>
-          <Button variant="ghost">{link.label}</Button>
+          <Button 
+            variant={location === link.href ? "secondary" : "ghost"}
+            className="w-full justify-start"
+          >
+            {link.label}
+          </Button>
         </Link>
       ))}
     </>

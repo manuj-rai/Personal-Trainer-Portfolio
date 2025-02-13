@@ -12,6 +12,7 @@ import { Star, Dumbbell, Users, Video } from "lucide-react";
 import { motion } from "framer-motion";
 import type { Testimonial } from "@shared/schema";
 import { Link } from "wouter";
+import BMICalculator from "@/components/bmi-calculator";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -189,6 +190,9 @@ export default function Home() {
           </Carousel>
         )}
       </section>
+
+      {/* Add BMI Calculator Section after testimonials */}
+      <BMICalculator />
     </div>
   );
 }
