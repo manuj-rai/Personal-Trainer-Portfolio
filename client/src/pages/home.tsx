@@ -89,26 +89,26 @@ export default function Home() {
             <div>
               <h2 className="text-3xl font-bold">About Me</h2>
               <p className="mt-4 text-muted-foreground">
-                With over 10 years of experience in personal training, I've helped
+                With over 5 years of experience in personal training, I've helped
                 hundreds of clients achieve their fitness goals. My approach combines
                 proven training methods with personalized attention to deliver
                 results that last.
               </p>
               <div className="mt-6 grid grid-cols-3 gap-4 text-center">
-                <motion.div 
+              <motion.div 
                   whileHover={{ scale: 1.05 }}
                   className="p-4 rounded-lg bg-card"
                 >
-                  <div className="text-2xl font-bold">500+</div>
+                  <div className="text-2xl font-bold">k11</div>
                   <div className="text-sm text-muted-foreground">
-                    Clients Trained
+                    Certified
                   </div>
                 </motion.div>
                 <motion.div 
                   whileHover={{ scale: 1.05 }}
                   className="p-4 rounded-lg bg-card"
                 >
-                  <div className="text-2xl font-bold">10+</div>
+                  <div className="text-2xl font-bold">5+</div>
                   <div className="text-sm text-muted-foreground">
                     Years Experience
                   </div>
@@ -117,9 +117,9 @@ export default function Home() {
                   whileHover={{ scale: 1.05 }}
                   className="p-4 rounded-lg bg-card"
                 >
-                  <div className="text-2xl font-bold">k11</div>
+                  <div className="text-2xl font-bold">500+</div>
                   <div className="text-sm text-muted-foreground">
-                    Certified
+                    Clients Trained
                   </div>
                 </motion.div>
               </div>
