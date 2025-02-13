@@ -35,6 +35,11 @@ export default function Navbar() {
           </Button>
         </Link>
       ))}
+      <Link href="/booking">
+        <Button variant="default" className="w-full">
+          Book a Session
+        </Button>
+      </Link>
     </>
   );
 
