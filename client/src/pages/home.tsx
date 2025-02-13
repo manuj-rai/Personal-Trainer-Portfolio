@@ -94,7 +94,7 @@ export default function Home() {
                 proven training methods with personalized attention to deliver
                 results that last.
               </p>
-              <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+              <div className="mt-6 grid grid-cols-1 gap-4 text-center">
                 <motion.div 
                   whileHover={{ scale: 1.05 }}
                   className="p-4 rounded-lg bg-card"
