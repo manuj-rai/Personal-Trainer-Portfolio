@@ -117,9 +117,9 @@ export default function Home() {
                   whileHover={{ scale: 1.05 }}
                   className="p-4 rounded-lg bg-card"
                 >
-                  <div className="text-2xl font-bold">100%</div>
+                  <div className="text-2xl font-bold">k11</div>
                   <div className="text-sm text-muted-foreground">
-                    Satisfaction
+                    Certified
                   </div>
                 </motion.div>
               </div>
