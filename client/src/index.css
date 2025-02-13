@@ -28,3 +28,24 @@ body {
     overflow-x: hidden;
   }
 }
+
+/* Scrollbar width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+  background: #000; /* Dark track */
+}
+
+/* Scrollbar Handle */
+::-webkit-scrollbar-thumb {
+  background: oklch(70% 0.1 260); /* Red thumb */
+  border-radius: 10px;
+}
+
+/* Scrollbar Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(70% 0.1 260); /* Darker red */
+}
