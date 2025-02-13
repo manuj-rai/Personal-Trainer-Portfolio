@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/carousel";
 import { Star, Dumbbell, Users, Video } from "lucide-react";
 import { motion } from "framer-motion";
-import type { Testimonial } from "@shared/schema";
+import testimonialsData from "@/data/testimonials.json";
 import { Link } from "wouter";
 import BMICalculator from "@/components/bmi-calculator";
 
@@ -29,10 +29,12 @@ const staggerChildren = {
 };
 
 export default function Home() {
-  const { data: testimonials, isLoading } = useQuery<Testimonial[]>({
-    queryKey: ["/api/testimonials"],
+  const { data: testimonials = testimonialsData, isLoading } = useQuery({
+    queryKey: ["testimonials"],
+    queryFn: async () => testimonialsData,
+    staleTime: Infinity,
   });
-
+  
   return (
     <div className="flex flex-col gap-20 pb-20">
       {/* Hero Section */}

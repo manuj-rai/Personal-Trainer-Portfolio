@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "text": "This training program completely changed my fitness journey. Highly recommended!",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "name": "Sarah Williams",
+      "text": "The personalized workouts helped me achieve my goals faster than ever.",
+      "rating": 4
+    },
+    {
+      "id": 3,
+      "name": "Michael Brown",
+      "text": "Excellent guidance and support throughout. I feel stronger and healthier!",
+      "rating": 5
+    },
+    {
+      "id": 4,
+      "name": "Emily Johnson",
+      "text": "Very professional and well-structured plans. I love the results so far!",
+      "rating": 5
+    },
+    {
+      "id": 5,
+      "name": "David Smith",
+      "text": "Great experience! The workouts are effective and easy to follow.",
+      "rating": 4
+    }
+  ]
+  

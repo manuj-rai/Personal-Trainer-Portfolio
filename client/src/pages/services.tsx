@@ -9,9 +9,10 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Check } from "lucide-react";
-import type { Service } from "@shared/schema";
+import servicesData from "../data/services.json";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
+
 
 const cardVariants = {
   initial: { opacity: 0, y: 20 },
@@ -58,9 +59,19 @@ const pricingPlans = [
   }
 ];
 
+type Service = {
+  id: number;
+  title: string;
+  description: string;
+  price: string;
+  features: string[];
+};
+
 export default function Services() {
-  const { data: services, isLoading } = useQuery<Service[]>({
-    queryKey: ["/api/services"],
+  const { data: services = servicesData, isLoading } = useQuery<Service[]>({
+    queryKey: ["services"],
+    queryFn: async () => servicesData,
+    staleTime: Infinity,
   });
 
   if (isLoading) {
@@ -84,7 +95,7 @@ export default function Services() {
       </motion.div>
 
       <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {services?.map((service, index) => (
+        {services?.map((service: Service, index: number) => (
           <motion.div
             key={service.id}
             variants={cardVariants}

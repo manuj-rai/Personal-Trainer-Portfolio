@@ -1,0 +1,39 @@
+[
+    {
+      "id": 1,
+      "title": "Personal Training",
+      "description": "One-on-one sessions tailored to your goals.",
+      "price": "$50/session",
+      "features": [
+        "Customized workout plans",
+        "One-on-one coaching",
+        "Progress tracking",
+        "Nutritional guidance"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Group Training",
+      "description": "Join a group for motivation and fun workouts.",
+      "price": "$30/session",
+      "features": [
+        "Small group classes",
+        "Full-body workouts",
+        "Community support",
+        "Affordable pricing"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Online Coaching",
+      "description": "Train remotely with expert guidance.",
+      "price": "$100/month",
+      "features": [
+        "Personalized workout programs",
+        "Live video check-ins",
+        "24/7 chat support",
+        "Nutrition plans"
+      ]
+    }
+  ]
+  
