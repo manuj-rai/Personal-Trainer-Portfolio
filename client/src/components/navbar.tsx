@@ -18,7 +18,7 @@ export default function Navbar() {
   const links = [
     { href: "/", label: "Home" },
     { href: "/services", label: "Services" },
-    { href: "/gallery", label: "Gallery" },
+    // { href: "/gallery", label: "Gallery" },
     { href: "/success-stories", label: "Success Stories" },
     { href: "/contact", label: "Contact" },
   ];
@@ -69,7 +69,7 @@ export default function Navbar() {
             </SheetContent>
           </Sheet>
         ) : (
-          <div className="flex flex-1 items-center justify-between space-x-2">
+          <div className="flex flex-1 items-center justify-around space-x-2">
             <div className="flex items-center space-x-2">
               <NavLinks />
             </div>

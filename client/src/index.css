@@ -11,3 +11,15 @@
     @apply font-sans antialiased bg-background text-foreground;
   }
 }
+
+body {
+  max-width: 90%;
+  margin: auto;
+}
+
+@media (MAx-width:768px) {
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
