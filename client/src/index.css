@@ -12,6 +12,11 @@
   }
 }
 
+html {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   max-width: 90%;
   margin: auto;
