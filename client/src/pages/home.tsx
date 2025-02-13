@@ -8,10 +8,24 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Star } from "lucide-react";
+import { Star, Dumbbell, Users, Video } from "lucide-react";
 import { motion } from "framer-motion";
 import type { Testimonial } from "@shared/schema";
 import { Link } from "wouter";
+
+const fadeIn = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.5 }
+};
+
+const staggerChildren = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
 
 export default function Home() {
   const { data: testimonials, isLoading } = useQuery<Testimonial[]>({
@@ -21,39 +35,54 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-20 pb-20">
       {/* Hero Section */}
-      <section className="relative">
-        <div className="container flex min-h-[80vh] flex-col items-center justify-center text-center">
+      <section className="relative overflow-hidden">
+        <div className="container flex min-h-[90vh] flex-col items-center justify-center text-center px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            initial="initial"
+            animate="animate"
+            variants={staggerChildren}
             className="max-w-3xl"
           >
-            <h1 className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-5xl font-bold tracking-tight text-transparent sm:text-6xl">
+            <motion.h1 
+              variants={fadeIn}
+              className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-transparent"
+            >
               Transform Your Life Through Fitness
-            </h1>
-            <p className="mt-6 text-xl text-muted-foreground">
+            </motion.h1>
+            <motion.p 
+              variants={fadeIn}
+              className="mt-6 text-lg md:text-xl text-muted-foreground"
+            >
               Expert personal training tailored to your goals. Whether you're just starting
               or looking to level up, I'll help you achieve the results you want.
-            </p>
-            <div className="mt-10 flex justify-center gap-4">
+            </motion.p>
+            <motion.div 
+              variants={fadeIn}
+              className="mt-10 flex flex-col sm:flex-row justify-center gap-4"
+            >
               <Link href="/contact">
-                <Button size="lg">Start Your Journey</Button>
+                <Button size="lg" className="w-full sm:w-auto">Start Your Journey</Button>
               </Link>
               <Link href="/services">
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto">
                   View Programs
                 </Button>
               </Link>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="container">
+      <section className="container px-4">
         <div className="grid gap-12 md:grid-cols-2">
-          <div className="flex items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="flex items-center"
+          >
             <div>
               <h2 className="text-3xl font-bold">About Me</h2>
               <p className="mt-4 text-muted-foreground">
@@ -62,43 +91,64 @@ export default function Home() {
                 proven training methods with personalized attention to deliver
                 results that last.
               </p>
-              <div className="mt-6 grid grid-cols-3 gap-4 text-center">
-                <div>
+              <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                <motion.div 
+                  whileHover={{ scale: 1.05 }}
+                  className="p-4 rounded-lg bg-card"
+                >
                   <div className="text-2xl font-bold">500+</div>
                   <div className="text-sm text-muted-foreground">
                     Clients Trained
                   </div>
-                </div>
-                <div>
+                </motion.div>
+                <motion.div 
+                  whileHover={{ scale: 1.05 }}
+                  className="p-4 rounded-lg bg-card"
+                >
                   <div className="text-2xl font-bold">10+</div>
                   <div className="text-sm text-muted-foreground">
                     Years Experience
                   </div>
-                </div>
-                <div>
+                </motion.div>
+                <motion.div 
+                  whileHover={{ scale: 1.05 }}
+                  className="p-4 rounded-lg bg-card"
+                >
                   <div className="text-2xl font-bold">100%</div>
                   <div className="text-sm text-muted-foreground">
                     Satisfaction
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
-          </div>
-          <div className="relative aspect-square overflow-hidden rounded-lg">
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="relative aspect-square overflow-hidden rounded-lg"
+          >
             <img
-              src="https://images.unsplash.com/photo-1434682772747-f16d3ea162c3"
+              src="https://images.unsplash.com/photo-1434682881908-b43d0467b798"
               alt="Trainer"
-              className="object-cover"
+              className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
             />
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="container">
-        <h2 className="mb-12 text-center text-3xl font-bold">
+      <section className="container px-4">
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="mb-12 text-center text-3xl font-bold"
+        >
           What My Clients Say
-        </h2>
+        </motion.h2>
         {isLoading ? (
           <div>Loading testimonials...</div>
         ) : (
@@ -106,24 +156,31 @@ export default function Home() {
             <CarouselContent>
               {testimonials?.map((testimonial) => (
                 <CarouselItem key={testimonial.id}>
-                  <Card>
-                    <CardContent className="flex flex-col items-center gap-4 p-6">
-                      <div className="flex gap-1">
-                        {Array.from({ length: testimonial.rating }).map((_, i) => (
-                          <Star
-                            key={i}
-                            className="h-5 w-5 fill-primary text-primary"
-                          />
-                        ))}
-                      </div>
-                      <blockquote className="text-center text-lg">
-                        "{testimonial.text}"
-                      </blockquote>
-                      <cite className="not-italic text-muted-foreground">
-                        - {testimonial.name}
-                      </cite>
-                    </CardContent>
-                  </Card>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
+                  >
+                    <Card>
+                      <CardContent className="flex flex-col items-center gap-4 p-6">
+                        <div className="flex gap-1">
+                          {Array.from({ length: testimonial.rating }).map((_, i) => (
+                            <Star
+                              key={i}
+                              className="h-5 w-5 fill-primary text-primary"
+                            />
+                          ))}
+                        </div>
+                        <blockquote className="text-center text-lg">
+                          "{testimonial.text}"
+                        </blockquote>
+                        <cite className="not-italic text-muted-foreground">
+                          - {testimonial.name}
+                        </cite>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
                 </CarouselItem>
               ))}
             </CarouselContent>
