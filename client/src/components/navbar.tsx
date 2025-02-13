@@ -69,7 +69,7 @@ export default function Navbar() {
             </SheetContent>
           </Sheet>
         ) : (
-          <div className="flex flex-1 items-center justify-around space-x-2">
+          <div className="flex flex-1 items-center justify-between space-x-2">
             <div className="flex items-center space-x-2">
               <NavLinks />
             </div>
