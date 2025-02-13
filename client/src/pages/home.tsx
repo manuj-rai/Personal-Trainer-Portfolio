@@ -117,7 +117,7 @@ export default function Home() {
                   whileHover={{ scale: 1.05 }}
                   className="p-4 rounded-lg bg-card"
                 >
-                  <div className="text-2xl font-bold">500+</div>
+                  <div className="text-2xl font-bold">200+</div>
                   <div className="text-sm text-muted-foreground">
                     Clients Trained
                   </div>
