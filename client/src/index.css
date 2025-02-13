@@ -41,11 +41,10 @@ body {
 
 /* Scrollbar Handle */
 ::-webkit-scrollbar-thumb {
-  background: oklch(70% 0.1 260); /* Red thumb */
-  border-radius: 10px;
+  background: oklch(70% 0.1 260); 
 }
 
 /* Scrollbar Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: oklch(70% 0.1 260); /* Darker red */
+  background: oklch(70% 0.1 260);
 }
