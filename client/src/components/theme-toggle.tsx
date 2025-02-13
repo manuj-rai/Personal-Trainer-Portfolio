@@ -12,6 +12,14 @@ export function ThemeToggle() {
   const [theme, setTheme] = useState<"light" | "dark" | "system">("system");
 
   useEffect(() => {
+    // Get stored theme or default to system
+    const storedTheme = localStorage.getItem("theme") as "light" | "dark" | "system" | null;
+    if (storedTheme) {
+      setTheme(storedTheme);
+    }
+  }, []);
+
+  useEffect(() => {
     const root = window.document.documentElement;
     root.classList.remove("light", "dark");
 
@@ -21,15 +29,26 @@ export function ThemeToggle() {
         ? "dark"
         : "light";
       root.classList.add(systemTheme);
+      // Listen for system theme changes
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      const handleChange = (e: MediaQueryListEvent) => {
+        root.classList.remove("light", "dark");
+        root.classList.add(e.matches ? "dark" : "light");
+      };
+      mediaQuery.addEventListener("change", handleChange);
+      return () => mediaQuery.removeEventListener("change", handleChange);
     } else {
       root.classList.add(theme);
     }
+
+    // Store theme preference
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
+        <Button variant="outline" size="icon" className="relative">
           <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
           <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
           <span className="sr-only">Toggle theme</span>

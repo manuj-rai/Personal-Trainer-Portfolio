@@ -18,6 +18,7 @@ export default function Navbar() {
     { href: "/", label: "Home" },
     { href: "/services", label: "Services" },
     { href: "/gallery", label: "Gallery" },
+    { href: "/success-stories", label: "Success Stories" },
     { href: "/contact", label: "Contact" },
   ];
 
@@ -50,6 +51,9 @@ export default function Navbar() {
             <SheetContent side="right" className="w-[240px] sm:w-[340px]">
               <div className="flex flex-col gap-4 py-4">
                 <NavLinks />
+                <div className="ml-3">
+                  <ThemeToggle />
+                </div>
               </div>
             </SheetContent>
           </Sheet>
