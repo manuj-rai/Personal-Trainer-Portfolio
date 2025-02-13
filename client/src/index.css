@@ -17,7 +17,7 @@ body {
   margin: auto;
 }
 
-@media (MAx-width:768px) {
+@media (max-width:768px) {
   body {
     max-width: 100%;
     overflow-x: hidden;
