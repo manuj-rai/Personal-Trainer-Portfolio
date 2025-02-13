@@ -41,10 +41,10 @@ body {
 
 /* Scrollbar Handle */
 ::-webkit-scrollbar-thumb {
-  background: oklch(70% 0.1 260); 
+  background: oklch(40% 0.2 30); 
 }
 
 /* Scrollbar Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: oklch(70% 0.1 260);
+  background: oklch(10% 0.2 30);
 }
