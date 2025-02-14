@@ -46,13 +46,13 @@ export default function Footer() {
             <h3 className="font-semibold">Contact</h3>
             <ul className="mt-4 space-y-2">
               <li className="text-sm text-muted-foreground">
-                Email: trainer@fitpro.com
+                Email: imanujrai7@gmail.com
               </li>
               <li className="text-sm text-muted-foreground">
-                Phone: (555) 123-4567
+                Phone: (+91) 87999 33509
               </li>
               <li className="text-sm text-muted-foreground">
-                Location: New York, NY
+                Location: India
               </li>
             </ul>
           </div>
@@ -61,7 +61,7 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold">Follow Us</h3>
             <div className="mt-4 flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary">
+              <a href="https://www.instagram.com/manuj_rai_official" className="text-muted-foreground hover:text-primary">
                 <Instagram className="h-5 w-5" />
               </a>
               <a href="#" className="text-muted-foreground hover:text-primary">
