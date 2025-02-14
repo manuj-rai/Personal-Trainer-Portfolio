@@ -1,5 +1,5 @@
 ## Preview
-[![vCard Portfolio Preview](preview.png)](https://personal-trainer-portfolio.vercel.app/)
+[![Preview](preview.png)](https://personal-trainer-portfolio.vercel.app/)
 
 # Personal Trainer Portfolio Website
 A modern, responsive personal trainer portfolio website built with React, Tailwind CSS, and Express.
