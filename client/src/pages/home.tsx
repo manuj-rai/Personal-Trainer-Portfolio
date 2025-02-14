@@ -133,7 +133,7 @@ export default function Home() {
             className="relative aspect-square overflow-hidden rounded-lg"
           >
             <img
-              src="https://images.unsplash.com/photo-1434682881908-b43d0467b798"
+              src="https://img.freepik.com/free-photo/front-view-fit-shirtless-man-with-weights_23-2148700662.jpg?ga=GA1.1.1148541306.1739510033&semt=ais_authors_boost"
               alt="Trainer"
               className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
             />
