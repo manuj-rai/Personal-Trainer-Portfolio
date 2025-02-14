@@ -11,14 +11,14 @@ const stories = [
   },
   {
     name: "Maria Rodriguez",
-    image: "https://images.unsplash.com/photo-1609899537878-9885e446a24f",
+    image: "https://img.freepik.com/free-photo/young-adult-doing-indoor-sport-gym_23-2149205542.jpg?ga=GA1.1.1148541306.1739510033&semt=ais_authors_boost",
     story: "Gained strength and confidence",
     description: "From barely being able to do a push-up to completing multiple sets with ease. The journey has been incredible and empowering.",
     achievement: "Doubled strength metrics"
   },
   {
     name: "David Chen",
-    image: "https://images.unsplash.com/photo-1617872952434-2a024cf58e36",
+    image: "https://img.freepik.com/free-photo/man-training-gym_52683-103765.jpg?ga=GA1.1.1148541306.1739510033&semt=ais_authors_boost",
     story: "Recovered from injury",
     description: "After a back injury, I thought I'd never train again. The rehabilitation program helped me get back stronger than ever.",
     achievement: "Back to full fitness"
