@@ -194,7 +194,7 @@ export default function Home() {
       </section>
 
       {/* Add BMI Calculator Section after testimonials */}
-      <BMICalculator />
+      {/* <BMICalculator /> */}
     </div>
   );
 }
