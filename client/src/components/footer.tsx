@@ -59,7 +59,7 @@ export default function Footer() {
 
           {/* Social Links */}
           <div>
-            <h3 className="font-semibold">Follow Us</h3>
+            <h3 className="font-semibold">Follow Me</h3>
             <div className="mt-4 flex space-x-4">
               <a href="https://www.instagram.com/manuj_rai_official" className="text-muted-foreground hover:text-primary">
                 <Instagram className="h-5 w-5" />
