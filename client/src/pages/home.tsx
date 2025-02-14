@@ -84,7 +84,7 @@ export default function Home() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="flex items-center"
+            className="flex"
           >
             <div>
               <h2 className="text-3xl font-bold">About Me</h2>
