@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Instagram, Facebook, Twitter } from "lucide-react";
+import { Instagram, Facebook, Twitter, Linkedin, Github } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -63,6 +63,12 @@ export default function Footer() {
             <div className="mt-4 flex space-x-4">
               <a href="https://www.instagram.com/manuj_rai_official" className="text-muted-foreground hover:text-primary">
                 <Instagram className="h-5 w-5" />
+              </a>
+              <a href="https://www.linkedin.com/in/manujrai/" className="text-muted-foreground hover:text-primary">
+                <Linkedin className="h-5 w-5" />
+              </a>
+              <a href="https://github.com/manuj-rai" className="text-muted-foreground hover:text-primary">
+                <Github className="h-5 w-5" />
               </a>
               <a href="#" className="text-muted-foreground hover:text-primary">
                 <Facebook className="h-5 w-5" />
