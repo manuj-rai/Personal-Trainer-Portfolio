@@ -42,9 +42,9 @@ export default function Home() {
     <div className="flex flex-col gap-20 pb-20">
       {/* Hero Section */}
       <section className="relative overflow-hidden">
-        
+
         {/* Content Container */}
-        <div className="container flex min-h-[90vh] flex-col items-center justify-center text-center px-4">
+        <div className="container flex min-h-[90vh] flex-col items-center justify-center text-center">
           <motion.div
             initial="initial"
             animate="animate"
