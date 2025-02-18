@@ -8,7 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Star, Dumbbell, Users, Video } from "lucide-react";
+import { Star } from "lucide-react";
 import { motion } from "framer-motion";
 import testimonialsData from "@/data/testimonials.json";
 import { Link } from "wouter";
@@ -41,7 +41,17 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-20 pb-20">
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden text-white relative">
+
+        {/* Background Hover Effect */}
+        <div
+          className={cn(
+            "absolute text-7xl font-extrabold text-red-500 opacity-0",
+            "group-hover:opacity-20 transition-opacity duration-500"
+          )}
+        >
+          FITNESS
+        </div>
 
         {/* Content Container */}
         <div className="container flex min-h-[90vh] flex-col items-center justify-center text-center">
@@ -98,7 +108,7 @@ export default function Home() {
             {/* Social Proof */}
             <motion.div
             variants={fadeIn}
-            className="mt-8 flex items-center justify-center gap-4 text-sm text-muted-foreground"
+            className="mt-8 flex items-center justify-center gap-4 text-sm text-muted-foreground flex-col"
           >
             <div className="flex -space-x-4">
               {/* Replace with actual client avatars */}
