@@ -13,6 +13,8 @@ import { motion } from "framer-motion";
 import testimonialsData from "@/data/testimonials.json";
 import { Link } from "wouter";
 import BMICalculator from "@/components/bmi-calculator";
+import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -29,6 +31,7 @@ const staggerChildren = {
 };
 
 export default function Home() {
+  const hoverText = "Transform Your Life Through Fitness".split(" ");
   const { data: testimonials = testimonialsData, isLoading } = useQuery({
     queryKey: ["testimonials"],
     queryFn: async () => testimonialsData,
@@ -39,19 +42,25 @@ export default function Home() {
     <div className="flex flex-col gap-20 pb-20">
       {/* Hero Section */}
       <section className="relative overflow-hidden">
+        
+        {/* Content Container */}
         <div className="container flex min-h-[90vh] flex-col items-center justify-center text-center px-4">
           <motion.div
             initial="initial"
             animate="animate"
             variants={staggerChildren}
-            className="max-w-3xl"
+            className="max-w-3xl bg-gradient-to-br from-background/50 to-background/10 backdrop-blur-lg p-8 rounded-2xl border border-border/20"
+            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+            whileInView="animate"
           >
+            {/* Main Heading */}
             <motion.h1 
               variants={fadeIn}
-              className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-transparent"
-            >
+              className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-transparent animate-gradient-x"            >
               Transform Your Life Through Fitness
             </motion.h1>
+
+            {/* Subheading */}
             <motion.p 
               variants={fadeIn}
               className="mt-6 text-lg md:text-xl text-muted-foreground"
@@ -59,19 +68,62 @@ export default function Home() {
               Expert personal training tailored to your goals. Whether you're just starting
               or looking to level up, I'll help you achieve the results you want.
             </motion.p>
+
+            {/* Buttons */}
             <motion.div 
               variants={fadeIn}
               className="mt-10 flex flex-col sm:flex-row justify-center gap-4"
             >
               <Link href="/contact">
-                <Button size="lg" className="w-full sm:w-auto">Start Your Journey</Button>
+              <Button
+                  size="lg"
+                  className="relative overflow-hidden group w-full sm:w-auto hover:scale-[1.02] active:scale-95 transition-transform"
+                >
+                  <span className="relative z-10">Start Your Journey</span>
+                  <div className="absolute inset-0 bg-primary/10 group-hover:bg-primary/20 transition-all" />
+                  <div className="absolute bottom-0 h-[2px] w-full bg-primary group-hover:h-full transition-all duration-300" />
+                </Button>
               </Link>
               <Link href="/services">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="w-full sm:w-auto hover:scale-[1.02] active:scale-95 transition-transform"
+                >
                   View Programs
                 </Button>
               </Link>
             </motion.div>
+
+            {/* Social Proof */}
+            <motion.div
+            variants={fadeIn}
+            className="mt-8 flex items-center justify-center gap-4 text-sm text-muted-foreground"
+          >
+            <div className="flex -space-x-4">
+              {/* Replace with actual client avatars */}
+              <img
+                src="/avatar1.jpg"
+                alt="Client 1"
+                className="w-10 h-10 rounded-full border-2 border-background"
+              />
+              <img
+                src="/avatar2.jpg"
+                alt="Client 2"
+                className="w-10 h-10 rounded-full border-2 border-background"
+              />
+              <img
+                src="/avatar3.jpg"
+                alt="Client 3"
+                className="w-10 h-10 rounded-full border-2 border-background"
+              />
+            </div>
+            <span>Join 1,200+ transformed clients</span>
+            <Badge variant="outline" className="border-primary">
+              <Star className="w-4 h-4 mr-1 fill-primary" />
+              4.9/5 (380+ reviews)
+            </Badge>
+          </motion.div>
           </motion.div>
         </div>
       </section>
