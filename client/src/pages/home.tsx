@@ -49,7 +49,7 @@ export default function Home() {
             initial="initial"
             animate="animate"
             variants={staggerChildren}
-            className="max-w-4xl bg-gradient-to-br from-background/50 to-background/10 backdrop-blur-lg p-8 rounded-2xl border border-border/20"
+            className="max-w-4xl bg-gradient-to-br from-background/50 to-background/10 backdrop-blur-lg p-4 rounded-2xl border border-border/20"
             viewport={{ once: true, margin: "0px 0px -100px 0px" }}
             whileInView="animate"
           >
