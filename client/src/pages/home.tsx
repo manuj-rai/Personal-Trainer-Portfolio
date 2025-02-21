@@ -8,6 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
 import testimonialsData from "@/data/testimonials.json";
@@ -44,22 +45,17 @@ export default function Home() {
       <section className="relative overflow-hidden text-white relative">
 
         {/* Background Hover Effect */}
-        <div
-          className={cn(
-            "absolute text-7xl font-extrabold text-red-500 opacity-0",
-            "group-hover:opacity-20 transition-opacity duration-500"
-          )}
-        >
-          FITNESS
+        <div className="absolute w-full mt-24">
+          <TextHoverEffect text="FITNESS" />
         </div>
 
         {/* Content Container */}
-        <div className="container flex min-h-[90vh] flex-col items-center justify-center text-center">
+        <div className="container flex min-h-[90vh] flex-col items-center justify-center text-center z-10">
           <motion.div
             initial="initial"
             animate="animate"
             variants={staggerChildren}
-            className="max-w-4xl bg-gradient-to-br from-background/50 to-background/10 backdrop-blur-lg p-4 rounded-2xl border border-border/20"
+            className="max-w-4xl p-4"
             viewport={{ once: true, margin: "0px 0px -100px 0px" }}
             whileInView="animate"
           >
