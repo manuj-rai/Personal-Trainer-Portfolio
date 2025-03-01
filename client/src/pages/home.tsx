@@ -44,10 +44,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative overflow-hidden text-white relative">
 
-        {/* Background Hover Effect */}
-        <div className="absolute w-full mt-24">
-          <TextHoverEffect text="FITNESS" />
-        </div>
+
 
         {/* Content Container */}
         <div className="container flex min-h-[90vh] flex-col items-center justify-center text-center z-10">
@@ -94,7 +91,7 @@ export default function Home() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto hover:scale-[1.02] active:scale-95 transition-transform"
+                  className="w-full sm:w-auto black hover:scale-[1.02] active:scale-95 transition-transform"
                 >
                   View Programs
                 </Button>
@@ -133,6 +130,11 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+      
+      {/* Background Hover Effect */}
+      <div className="relative w-full">
+        <TextHoverEffect text="FITNESS" />
+      </div>
 
       {/* About Section */}
       <section className="container px-4">
@@ -147,7 +149,7 @@ export default function Home() {
             <div>
               <h2 className="text-3xl font-bold">About Me</h2>
               <p className="mt-4 text-muted-foreground">
-                With over 5 years of experience in personal training, I've helped
+                With over 7 years of experience in personal training, I've helped
                 hundreds of clients achieve their fitness goals. My approach combines
                 proven training methods with personalized attention to deliver
                 results that last.
@@ -166,7 +168,7 @@ export default function Home() {
                   whileHover={{ scale: 1.05 }}
                   className="p-4 rounded-lg bg-card"
                 >
-                  <div className="text-2xl font-bold">5+</div>
+                  <div className="text-2xl font-bold">7+</div>
                   <div className="text-sm text-muted-foreground">
                     Years Experience
                   </div>
