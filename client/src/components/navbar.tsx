@@ -7,13 +7,28 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const isMobile = useIsMobile();
   const [location] = useLocation();
+  const [isVisible, setIsVisible] = useState(true);
+  let lastScrollY = 0;
+
+  useEffect(() => {
+    if (!isMobile) return;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsVisible(currentScrollY < lastScrollY || currentScrollY < 50);
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isMobile]);
 
   const links = [
     { href: "/", label: "Home" },
@@ -44,7 +59,11 @@ export default function Navbar() {
   );
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <nav
+      className={`sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-transform ${
+        isMobile ? (isVisible ? "translate-y-0" : "-translate-y-full") : ""
+      }`}
+    >
       <div className="container flex h-14 items-center justify-between">
         {/* Logo on the left */}
         <div className="flex items-center space-x-2">
