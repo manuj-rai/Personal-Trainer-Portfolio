@@ -20,6 +20,7 @@ export default function Navbar() {
     { href: "/services", label: "Services" },
     { href: "/success-stories", label: "Success Stories" },
     { href: "/contact", label: "Contact" },
+    { href: "/gallery", label: "Gallery" },
   ];
 
   const NavLinks = () => (
@@ -46,9 +47,25 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center justify-between">
         {/* Logo on the left */}
-        <Link href="/" className="font-bold ml-4">
-          FitPro Trainer
-        </Link>
+        <div className="flex items-center space-x-2">
+          {isMobile && (
+            <Sheet open={open} onOpenChange={setOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-5 w-5" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="left" className="w-[240px] sm:w-[340px]">
+                <div className="flex flex-col gap-4 py-4">
+                  <NavLinks />
+                </div>
+              </SheetContent>
+            </Sheet>
+          )}
+          <Link href="/" className="font-bold">
+            FitPro Trainer
+          </Link>
+        </div>
 
         {/* Desktop Navigation - Center */}
         {!isMobile && (
@@ -57,31 +74,10 @@ export default function Navbar() {
           </div>
         )}
 
-        {/* Theme Toggle in Center for Mobile */}
-        {isMobile && (
-          <div className="absolute left-1/2 -translate-x-1/2">
-            <ThemeToggle />
-          </div>
-        )}
-
-        {/* Theme Toggle on the Right for Desktop */}
-        {!isMobile && <ThemeToggle />}
-
-        {/* Mobile Navigation - Menu Button on Right */}
-        {isMobile && (
-          <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-5 w-5" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[240px] sm:w-[340px]">
-              <div className="flex flex-col gap-4 py-4">
-                <NavLinks />
-              </div>
-            </SheetContent>
-          </Sheet>
-        )}
+        {/* Theme Toggle on Right for Mobile & Desktop */}
+        <div className="mr-2">
+          <ThemeToggle />
+        </div>
       </div>
     </nav>
   );
